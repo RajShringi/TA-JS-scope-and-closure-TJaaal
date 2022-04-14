@@ -2,7 +2,7 @@
    JavaScript engine take the code and execute it line by line which is know as thread of excecution and finally gives an output.
 
 2. Where the JavaScript code gets executed?  
-   JavaScript code get executed in global execution context.
+   JavaScript code get executed in JavaScript engine.
 
 3. What does context means in Global Execution Context?
    any computation is happens in context part of global execution context.
