@@ -18,8 +18,7 @@ let percentage = (marks, total) => (marks * 100) / total;
 function percentage(marks, total) {
   return (marks * 100) / total;
 }
-// Your answer
-let percentage = (marks, total) => (marks * 100) / total;
+// function declaration
 ```
 
 ```js
@@ -27,9 +26,7 @@ let percentage = function percentage(marks, total) {
   return (marks * 100) / total;
 };
 
-function percentage(marks, total) {
-  return (marks * 100) / total;
-}
+// function expression
 ```
 
 ```js
@@ -37,9 +34,7 @@ let percentage = function (marks, total) {
   return (marks * 100) / total;
 };
 
-function percentage(marks, total) {
-  return (marks * 100) / total;
-}
+//function expression
 ```
 
 ```js
@@ -47,17 +42,13 @@ let percentage = (marks, total) => {
   return (marks * 100) / total;
 };
 
-function percentage(marks, total) {
-  return (marks * 100) / total;
-}
+// function expression
 ```
 
 ```js
 let percentage = (marks, total) => (marks * 100) / total;
 
-function percentage(marks, total) {
-  return (marks * 100) / total;
-}
+// function expression
 ```
 
 3. Why is a function definition an expression in JavaScript? Give one example of function expression.
@@ -100,7 +91,7 @@ sum(3, 4);
 ```
 
 7. What is the similarities between function definition and function call?  
-   in function defination we tell what this function will do and when we need to execute that function we call it.
+   function defination and function call are expression.
 8. Is the code below valid or invalid. Explain with reason.
 
 ```js
