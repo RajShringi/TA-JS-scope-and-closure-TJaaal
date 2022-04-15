@@ -5,8 +5,8 @@ Create a execution context diagram of the following code on your notebook. Take 
 1.
 
 ```js
-var firstName = 'Arya';
-var lastName = 'Stark';
+var firstName = "Arya";
+var lastName = "Stark";
 
 function getFullName(first, last) {
   return `${first} ${last}`;
@@ -17,22 +17,22 @@ function sayHelloToUser(name) {
 }
 
 var fullName = getFullName(firstName, lastName);
-var jon = getFullName('John', 'Snow');
+var jon = getFullName("John", "Snow");
 
 console.log(fullName);
 
-var userMessage = sayHelloToUser('Bran');
+var userMessage = sayHelloToUser("Bran");
 ```
 
 <!-- Put your image below -->
 
-![](./img/image-name.jpg)
+![](./img/image1.png)
 
 2.
 
 ```js
 function sayHi() {
-  var name = 'Lydia';
+  var name = "Lydia";
   var age = 21;
   console.log(name);
   console.log(age);
@@ -43,7 +43,7 @@ sayHi();
 
 <!-- Put your image below -->
 
-![](./img/image-name.jpg)
+![](./img/image2.png)
 
 3.
 
@@ -51,7 +51,7 @@ sayHi();
 function sayHi() {
   console.log(name);
   console.log(age);
-  var name = 'Lydia';
+  var name = "Lydia";
   var age = 21;
 }
 
@@ -60,17 +60,19 @@ sayHi();
 
 <!-- Put your image below -->
 
-![](./img/image-name.jpg)
+![](./img/image3.png)
 
 4.
 
 ```js
 console.log(arr); // output
 console.log(username); // output
-var usename = 'Sam';
+var usename = "Sam";
 var arr = [1, 2, 3, 4, 5, 6];
 
 function double(num) {
   return num * 2;
 }
 ```
+
+![](./img/image4.png)
