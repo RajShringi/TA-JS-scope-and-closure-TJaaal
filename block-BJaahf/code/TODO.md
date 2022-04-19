@@ -10,8 +10,15 @@
 **You can use normal for loop for this function**
 
 ```js
-function loop() {
+function loop(start, testfn, updatefn, bodyfn) {
   // Your code goes here
+  if (testfn(start)) {
+    bodyfn(start);
+  } else {
+    return;
+  }
+  start = updatefn(start);
+  loop(start, testfn, updatefn, bodyfn);
 }
 
 loop(
@@ -30,7 +37,16 @@ loop(
 Here's how it works. The function has an "accumulator value" which starts as the `initialValue` and accumulates the output of each loop. The array is iterated over, passing the accumulator and the next array element as arguments to the `callback`. The callback's return value becomes the new accumulator value. The next loop executes with this new accumulator value. In the example above, the accumulator begins at 0. `add(0,4)` is called. The accumulator's value is now 4. Then `add(4, 1)` to make it 5. Finally `add(5, 3)` brings it to 8, which is returned.
 
 ```js
-function reduce(array, callback, initialValue) {}
+let i = 1;
+function reduce(array, callback, initialValue) {
+  if (array.length < i) {
+    return initialValue;
+  } else {
+    initialValue = callback(initialValue, array[i - 1]);
+    i++;
+    return reduce(array, callback, initialValue);
+  }
+}
 
 // Test
 var nums = [4, 1, 3];
@@ -43,26 +59,47 @@ reduce(nums, add, 0); //-> 8
 3. Construct a function intersection that compares input arrays and returns a new array with elements found in all of the inputs.
 
 ```js
-function intersection(arrays) {}
+function intersection() {
+  let finalArray = [];
+  for (let i = 0; i < arguments[0].length; i++) {
+    let check = false;
+    for (let j = 1; j < arguments.length; j++) {
+      if (arguments[j].indexOf(arguments[0][i]) !== -1) {
+        check = true;
+      } else {
+        check = false;
+        break;
+      }
+    }
+    if (check === true) {
+      finalArray.push(arguments[0][i]);
+    }
+  }
+  return finalArray;
+}
 
 // Test
 console.log(
-  intersection(
-    [5, 10, 15, 20],
-    [15, 88, 1, 5, 7],
-    [1, 10, 15, 5, 20]
-  )
+  intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20])
 ); // should log: [5, 15]
 ```
 
 4. Construct a function `union` that compares input arrays and returns a new array that contains all elements. If there are duplicate elements, only add it once to the new array. Preserve the order of the elements starting from the first element of the first input array.
 
 ```js
-function union(arrays) {}
+function union(arrays) {
+  let finalArray = [];
+  for (let i = 0; i < arguments.length; i++) {
+    for (let j = 0; j < arguments[i].length; j++) {
+      if (finalArray.indexOf(arguments[i][j]) === -1) {
+        finalArray.push(arguments[i][j]);
+      }
+    }
+  }
+  return finalArray;
+}
 
 // Test
-console.log(
-  union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5])
-);
+console.log(union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]));
 // should log: [5, 10, 15, 88, 1, 7, 100]
 ```
