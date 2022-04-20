@@ -258,6 +258,10 @@ function sample(...args) {
 }
 
 sample("First", "Second", "Third");
+// output using rest operator take multiple arguments and put them inside array.
+// Hello I am First
+// Hello I am Second
+// Hello I am Third
 ```
 
 22. Guess the output and the reason behind that.
